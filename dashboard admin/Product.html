@@ -1,0 +1,158 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Product Form</title>
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <script type="text/javascript">
+   function previewImage(event) {
+  
+  var reader = new FileReader();
+  var imageField =document.getElementById("image-Field")
+
+  reader.onload = function(){
+  	if(reader.readyState==2){
+  		imageField.src=reader.result;
+  	}
+  }
+  reader.readAsDataURL(event.target.files[0]);
+  
+}
+</script>
+<script type="text/javascript">
+   function uploudImage(event) {
+  
+  var reader = new FileReader();
+  var imageuploud =document.getElementById("imageuploud")
+
+  reader.onload = function(){
+  	if(reader.readyState==2){
+  		imageuploud.src=reader.result;
+  	}
+  }
+  reader.readAsDataURL(event.target.files[0]);
+  
+}
+</script>
+	</head>
+	<body>
+		<form class="form-horizontal">
+<fieldset>
+<div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Product Panel</div>
+        <div class="card-body">
+          <div class="header">
+          	<!--imageHeader-->
+          	<div class="form-group row">
+          	<img class="foodimage" src="pexels-photo-461198.jpeg"/>
+          	<img class="foodimage" src="pexels-photo-1440119.jpeg"/>
+          </div>
+
+
+<!-- Text input-->
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="product_id">PRODUCT ID</label>  
+  <div class="col-sm-10">
+  <input id="product_id" name="product_id"  class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="product_name">NAME</label>  
+  <div class="col-sm-10">
+  <input id="product_name" name="product_name"  class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="product_chinese_name">CHINESE NAME </label>  
+  <div class="col-sm-10">
+  <input id="product_chinese_name" name="product_chinese_name" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+<br>
+<!-- picture input --> 
+<div class="form-group">
+  <label class="col-sm-2 col-form-label" for="filebutton">IMAGES</label>
+  <div class="col-sm-10">
+    <input id="filebutton" name="filebutton" class="input-file" type="file" accept="image/" onchange="previewImage(event)">
+    <img id="image-Field" src="180.png" alt="your image" />
+  </div>
+</div>
+<br>
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-sm-2 col-form-label" for="filebutton">CHN_IMAGE</label>
+  <div class="col-sm-10">
+    <input id="filebutton" name="filebutton" class="input-file" type="file" accept="image/" onchange="uploudImage(event)">
+    <img id="imageuploud" src="180.png" alt="your image" />
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-sm-2 col-form-label" for="product_description_EN">EN-Description</label>
+  <div class="col-sm-10">                     
+    <textarea class="form-control" id="product_description_EN" name="product_description_EN"></textarea>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-sm-2 col-form-label" for="product_name_CHN">CHN-Description</label>
+  <div class="col-sm-10">                     
+    <textarea class="form-control" id="product_name_CHN" name="product_name_CHN"></textarea>
+  </div>
+</div>
+
+
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_Type">PRODUCT Type:</label>
+  <div class="col-md-4">
+    <select id="product_Type" name="product_Type" class="form-control">
+    	<option>weight</option>
+      <option>package</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Unit_Type">Unit Type:</label>
+  <div class="col-md-4">
+    <select id="Unit_Type" name="Unit_Type" class="form-control">
+    	<option>g</option>
+      <option>pack</option>
+    </select>
+  </div>
+</div>
+<!-- Button -->
+<div class="form-group">
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="submitbtn">Submit</button>
+  </div>
+  </div>
+</fieldset>
+</form>
+	</body>
+</html>
